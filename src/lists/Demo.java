@@ -3,6 +3,8 @@ package lists;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Demo {
 
@@ -62,6 +64,7 @@ public class Demo {
 
 		ArrayList<String> initials = new ArrayList<>(List.of("JH", "TC", "AM")); // pre-populated and immutable
 
+		List<Integer> oneToHundred = IntStream.range(1, 101).boxed().collect(Collectors.toList());
 	}
 
 }
