@@ -12,10 +12,12 @@ public class Cat extends Pet {
 	}
 
 	public void sleep() {
+
 	}
 
-	public void meow() {
-		System.out.println("mew");
+	@Override
+	public void makeNoise() {
+		System.out.println("Meow");
 	}
 
 }

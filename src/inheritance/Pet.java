@@ -16,7 +16,11 @@ public class Pet extends Object {
 	}
 
 	public Pet() {
-		// TODO Auto-generated constructor stub
+		super();
+	}
+
+	public void makeNoise() {
+		System.out.println("Bleh?");
 	}
 
 	public String getName() {
@@ -49,6 +53,52 @@ public class Pet extends Object {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "Pet [name=" + this.name + ", breed=" + this.breed + ", colour=" + this.colour + ", age=" + this.age
+				+ "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + this.age;
+		result = prime * result + ((this.breed == null) ? 0 : this.breed.hashCode());
+		result = prime * result + ((this.colour == null) ? 0 : this.colour.hashCode());
+		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true; // are they the same object?
+		if (obj == null)
+			return false; // is one null?
+		if (getClass() != obj.getClass())
+			return false; // is it a different class?
+		Pet other = (Pet) obj;
+		if (this.age != other.age) // compares the fields
+			return false;
+		if (this.breed == null) {
+			if (other.breed != null)
+				return false;
+		} else if (!this.breed.equals(other.breed))
+			return false;
+		if (this.colour == null) {
+			if (other.colour != null)
+				return false;
+		} else if (!this.colour.equals(other.colour))
+			return false;
+		if (this.name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!this.name.equals(other.name))
+			return false;
+		return true;
 	}
 
 }
