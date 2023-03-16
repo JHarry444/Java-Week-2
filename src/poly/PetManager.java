@@ -21,6 +21,23 @@ public class PetManager {
 		return null;
 	}
 
+	public void remove(String type) {
+		List<Pet> toRemove = new ArrayList<>();
+		for (Pet p : new ArrayList<>(this.pets)) {
+			if (p.getClass().getSimpleName().equalsIgnoreCase(type))
+				toRemove.add(p);
+		}
+
+		this.pets.removeAll(toRemove);
+	}
+
+	public void remove(Class<?> clazz) {
+		for (Pet p : new ArrayList<>(this.pets)) {
+			if (p.getClass() == clazz)
+				this.pets.remove(p);
+		}
+	}
+
 	public List<Pet> getPets() {
 		return this.pets;
 	}

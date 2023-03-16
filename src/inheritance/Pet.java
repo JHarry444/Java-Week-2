@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Pet extends Object {
+public abstract class Pet extends Object {
 
 	private String name;
 	private String breed;
@@ -19,9 +19,7 @@ public class Pet extends Object {
 		super();
 	}
 
-	public void makeNoise() {
-		System.out.println("Bleh?");
-	}
+	public abstract void makeNoise();
 
 	public String getName() {
 		return this.name;

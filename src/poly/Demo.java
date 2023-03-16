@@ -31,6 +31,9 @@ public class Demo {
 
 		String petString = p.toString();
 		System.out.println(petString);
+
+		manager.remove(Dog.class);
+		manager.remove("cat");
 	}
 
 }
