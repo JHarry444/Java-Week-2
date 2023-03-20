@@ -2,6 +2,8 @@ package objects.sub;
 
 public class Trainer {
 
+	private final String employeeId;
+
 	// instance variables
 	private String name; // null
 
@@ -9,16 +11,22 @@ public class Trainer {
 
 	private String specialism; // null
 
-	public Trainer(String name, int age, String specialism) {
+	public Trainer(String employeeId, String name, int age, String specialism) {
 		// this -> references the current object
 		// this.name -> name from line 6
+		this.employeeId = employeeId;
 		this.name = name;
 		this.age = age;
 		this.specialism = specialism;
 	}
 
 	// overloaded constructor -> has different parameters
-	public Trainer() {
+	public Trainer(String employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public String getEmployeeId() {
+		return this.employeeId;
 	}
 
 	public String introduce() {
@@ -47,9 +55,9 @@ public class Trainer {
 		return this.name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 
 	public String getSpecialism() {
 		return this.specialism;
