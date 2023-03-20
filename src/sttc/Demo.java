@@ -1,5 +1,7 @@
 package sttc;
 
+import sttc.Person.PersonBuilder;
+
 public class Demo {
 
 	public static void main(String[] args) {
@@ -9,16 +11,19 @@ public class Demo {
 		Person p2 = new Person("TC", 22);
 		Person p3 = new Person("AM", 23);
 
-		System.out.println(p1.latinName);
-		System.out.println(p2.latinName);
-		System.out.println(p3.latinName);
+//		System.out.println(p1.latinName);
+//		System.out.println(p2.latinName);
+//		System.out.println(p3.latinName);
+//
+//		Person.latinName = "Homo Sapiens"; // correct
+//
+//		System.out.println(p1.latinName);
+//		System.out.println(p2.latinName);
+//		System.out.println(p3.latinName);
 
-		Person.latinName = "Homo Sapiens"; // correct
+		PersonBuilder builder = new PersonBuilder();
 
-		System.out.println(p1.latinName);
-		System.out.println(p2.latinName);
-		System.out.println(p3.latinName);
-
+		Person p = builder.name("JH").age(28).build();
 	}
 
 }
