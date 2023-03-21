@@ -29,6 +29,46 @@ public class Trainer {
 		return this.employeeId;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + this.age;
+		result = prime * result + ((this.employeeId == null) ? 0 : this.employeeId.hashCode());
+		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
+		result = prime * result + ((this.specialism == null) ? 0 : this.specialism.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Trainer other = (Trainer) obj;
+		if (this.age != other.age)
+			return false;
+		if (this.employeeId == null) {
+			if (other.employeeId != null)
+				return false;
+		} else if (!this.employeeId.equals(other.employeeId))
+			return false;
+		if (this.name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!this.name.equals(other.name))
+			return false;
+		if (this.specialism == null) {
+			if (other.specialism != null)
+				return false;
+		} else if (!this.specialism.equals(other.specialism))
+			return false;
+		return true;
+	}
+
 	public String introduce() {
 		String intro = "Hello, my name is ";
 		intro += this.name;
@@ -65,6 +105,12 @@ public class Trainer {
 
 	public void setSpecialism(String specialism) {
 		this.specialism = specialism;
+	}
+
+	@Override
+	public String toString() {
+		return "Trainer [employeeId=" + this.employeeId + ", name=" + this.name + ", age=" + this.age + ", specialism="
+				+ this.specialism + "]";
 	}
 
 }
