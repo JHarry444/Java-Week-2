@@ -3,6 +3,7 @@ package poly;
 import java.util.ArrayList;
 import java.util.List;
 
+import exceptions.PetNotFoundException;
 import inheritance.Pet;
 
 public class PetManager {
@@ -13,12 +14,12 @@ public class PetManager {
 		return this.pets.add(p);
 	}
 
-	public Pet findName(String name) {
+	public Pet findName(String name) throws PetNotFoundException {
 		for (Pet p : this.pets) {
 			if (p.getName().equalsIgnoreCase(name))
 				return p;
 		}
-		return null;
+		throw new PetNotFoundException("No pet found with name: " + name);
 	}
 
 	public void remove(String type) {
