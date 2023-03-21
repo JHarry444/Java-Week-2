@@ -18,4 +18,20 @@ public class Simulator {
 		System.out.println("You called: " + call + " And the result was: " + result);
 		return call == result;
 	}
+
+	public Result playRPS(RPS playerChoice) {
+//		int randNum = this.rand.nextInt(3);
+		RPS cpuChoice = RPS.values()[this.rand.nextInt(RPS.values().length)];
+//		if (randNum == 0)
+//			cpuChoice = RPS.ROCK;
+//		else if (randNum == 1)
+//			cpuChoice = RPS.PAPER;
+//		else
+//			cpuChoice = RPS.SCISSORS;
+
+		System.out.println("You picked: " + playerChoice + " CPU picked: " + cpuChoice);
+
+		return playerChoice.beats(cpuChoice);
+
+	}
 }
